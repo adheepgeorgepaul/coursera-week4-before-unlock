@@ -81,3 +81,10 @@ body
     filter: invert(100%);
 }
 
+#carouselButton
+{
+   position: absolute;   
+   right: 0px;
+   bottom: 0px;
+   z-index: 1;
+}
