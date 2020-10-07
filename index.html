@@ -33,7 +33,7 @@
                 </ul>
 
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginmodal">
+                    <a id="loginIcon">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -200,8 +200,7 @@
                     
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a class="btn btn-block nav-link btn-warning" role="button"  
-                        data-toggle="modal" data-target="#reservemodal">
+                    <a class="btn btn-block nav-link btn-warning" role="button" id="reserveIcon">
                         Reserve Table
                     </a>
                     
@@ -381,7 +380,8 @@
      <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
      <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
      <script>
-         $(document).ready(function(){
+         $(document).ready(function()
+         {
             $("#mycarousel").carousel( { interval : 2000});
             $("#carouselButton").click(function(){
                 if($("#carouselButton").children('span').hasClass('fa-pause'))
@@ -395,11 +395,21 @@
                 {
                     $("#mycarousel").carousel('cycle');
                     $("#carouselButton").children("span").removeClass("fa-play");
-                    $("#carouselButton").children("span").addClass("fa-pause")
+                    $("#carouselButton").children("span").addClass("fa-pause");
                 }
+            });
+
+            //MODALS
+            $("#loginIcon").click(function(){
+                $("#loginmodal").modal('show');
+            });
+
+            $("#reserveIcon").click(function(){
+                $("#reservemodal").modal('show');
             });
          });
      </script>
+     
 </body>
 
 </html>
